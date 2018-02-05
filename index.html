@@ -82,8 +82,8 @@
             <p>After installing curl, run the following command:</p>
             <pre>curl https://api.github.com</pre>
             <p>This will return a JSON-formatted list of entry points to query GitHub even further.</p>
-            <p>To create a repository for our use case of building a calculator, assuming that we have registered with GitHub as user 'vanHeemstraSystems', run the following command to create the 'calculator' repository.</p>
-            <pre>curl -u 'vanHeemstraSystems' https://api.github.com/user/repos -d "{\"name\":\"calculator\"}"</pre>
+            <p>To create a repository for our use case of building a calculator, assuming that we have registered with GitHub as user 'willem-vanHeemstraSystems' for an organisation 'vanHeemstraSystems', run the following command to create the 'calculator' repository.</p>
+            <pre>curl -u 'willem-vanHeemstraSystems' https://api.github.com/orgs/vanHeemstraSystems/repos -d '{"name":"calculator", "description":"Our Calculator Repository", "private": true, "has_issues": true, "has_projects": true, "has_wiki":false }'</pre>
             <p>When prompted for the password belonging to the user, enter its password.</p>
             <p>This will return a list in JSON, with amongst others the attribute that describes the URL for cloning the newly created repository.</p>
             <pre>"clone_url": "https://github.com/vanHeemstraSystems/calculator.git"</pre>
