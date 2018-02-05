@@ -82,8 +82,11 @@
             <p>After installing curl, run the following command:</p>
             <pre>curl https://api.github.com</pre>
             <p>This will return a JSON-formatted list of entry points to query GitHub even further.</p>
-            <p>To create a repository for our use case of building a calculator, assuming that we have registered with GitHub as user '', run the following command to create the 'calculator' repository.</p>
-            <pre>curl ...</pre>
+            <p>To create a repository for our use case of building a calculator, assuming that we have registered with GitHub as user 'willem@vanheemstrasystems.com', run the following command to create the 'calculator' repository.</p>
+            <pre>curl -u 'willem@vanheemstrasystems.com' https://api.github.com/user/repos -d "{\"name\":\"calculator\"}"</pre>
+            <p>When prompted for the password belonging to the user, enter its password.</p>
+            
+            
         <p>Following Test-Driven Development (TDD) principles, we'll now code the software for the calculator software system.</p>  
 <p>For the purpose of demonstration, we use different programming languages to achieve the same goal.</p>
           <h4>Step 3.1 - Coding in C#: calculator</h4>
