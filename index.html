@@ -90,9 +90,9 @@
             <p>With the repository created, we'll now pull it locally by executing the following command:</p>
             <pre>git clone https://github.com/vanHeemstraSystems/calculator.git</pre>
             <p>The above command will have created an apparently empty directory 'calculator' locally, but contains a '.git' subdirectory.</p>
-            <p>Move into the 'calculator' directory, create and add an empty README.md file</p>
+            <p>Move into the 'calculator' directory, create and add a README.md file with a title of 'calculator' in markdown format.</p>
             <pre>cd calculator</pre>
-            <pre>type nul > README.md</pre>
+            <pre>echo # calculator > README.md</pre>
             <pre>git add README.md</pre>
             <p>Check the status of the repository.</p>
             <pre>git status</pre>
@@ -103,7 +103,7 @@
             <p>Now that the README.md file has been added to the index of this repository (also known as 'staging'), it is time to commit it and push it back to the master branch.</p>
             <pre>git commit -m "Add README.md"</pre>
             <pre>git push origin master</pre>
-            <p>Although still an empty file, README.md is not stored in the remote repository in the master branch.</p>
+            <p>The README.md file is not stored in the remote repository in the master branch.</p>
             <p>You can view it in the browser, at <a href="https://www.github.com/vanHeemstraSystems/calculator/">https://www.github.com/vanHeemstraSystems/calculator/</a></p>
             
         <p>Following Test-Driven Development (TDD) principles, we'll now code the software for the calculator software system.</p>  
