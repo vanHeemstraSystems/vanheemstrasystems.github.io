@@ -46,7 +46,8 @@
                 <h4>Step 3.2 - Coding in Java: calculator</h4>
                 <p><a href="../java/">Link</a></p>
                 <h4>Step 3.3 - Coding in JavaScript: calculator</h4>
-                
+                <p>Based on 'jest-try' at https://facebook.github.io/jest/</p>
+
                 <h5>GitHub</h5>
                 <p>As we created a repository called 'calculator' at the start of our use case, we will now create a branch for our code in JavaScript, as follows.</p>
                 <pre>cd calculator</pre>
@@ -56,6 +57,23 @@
                 <p>From here on we will add and edit code for javascript in this javascript branch, in a newly created directory called javascript.</p>
                 <pre>mkdir javascript</pre>
                 <pre>cd javascript</pre>
+                <p>To see if Node is installed, type the below on your command line.</p>
+                <pre>node -v</pre>
+                <p>To see if Node Package Manager (NPM) is installed, type the below on your command line.</p>
+                <pre>npm -v</pre>
+                <p>create a file `package.json` with the following content:</p>
+                <pre>
+                    {
+                    "devDependencies": {
+                      "babel-preset-env": "*",
+                      "jest": "*"
+                    },
+                    "scripts": {
+                      "test": "jest"
+                    }
+                  }
+                </pre>
+                
                 <p>more to follow...</p>
                 <h4>Step 3.4 - Coding in Python: calculator</h4>
                 <p><a href="../python/">Link</a></p>
