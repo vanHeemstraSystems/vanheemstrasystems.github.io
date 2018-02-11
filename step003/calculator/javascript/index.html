@@ -71,8 +71,44 @@
         "test": "jest"
     }
 }</pre>
+                <p>Create a file `calculator.js` with the following content:</p>
+<pre>
+// calculator.js
 
-                <p>more to follow...</p>
+function calculator() {
+    return 'Hello World!';
+}
+
+module.exports = calculator;
+</pre>
+                <p>Create a file `calculator.test.js` with the following content:</p>
+<pre>
+// calculator.test.js
+
+test('calls calculator to equal "Hello World!"', () => {
+    const calculator = require('./calculator');
+    expect(calculator()).toBe('Hello World!');
+});
+</pre>
+                <p>Run <pre>npm install</pre> to install all entries of package.json.</p>
+                <p>Run <pre>npm test</pre> and Jest will print a message alike this:</p>
+<pre>
+PASS  .\calculator.test.js (10.266s)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        17.763s
+Ran all test suites.
+</pre>
+                <p><strong>You just successfully wrote your first test using Jest!</strong></p>
+                <p>This test used expect and toBe to test that two values were exactly identical.
+To learn about the other things that Jest can test, see <a href="https://facebook.github.io/jest/docs/en/using-matchers.html">Using Matchers</a>.</p>
+                <h3>Running from command line</h3>
+                <p>You can run Jest directly from the CLI (if it's globally available in your PATH, e.g. by npm install -g jest) with variety of useful options.</p>
+                <p>If you'd like to learn more about running jest through the command line, take a
+look at the <a href="https://facebook.github.io/jest/docs/en/cli.html">Jest CLI Options page</a>.</p>
+
                 <h4>Step 3.4 - Coding in Python: calculator</h4>
                 <p><a href="../python/">Link</a></p>
 
