@@ -72,10 +72,16 @@
     }
 }</pre>
 
+                <p>Add the new file to git:</p>
+                <pre>git add package.json</pre>
+
                 <p>Create a file '.gitignore' with the following content:</p>
 <pre>
 /node_modules
 </pre>
+
+                <p>Add the new file to git:</p>
+                <pre>git add .gitignore</pre>
 
                 <p>Create a file `calculator.js` with the following content:</p>
 <pre>
@@ -87,6 +93,9 @@ function calculator() {
 
 module.exports = calculator;
 </pre>
+                <p>Add the new file to git:</p>
+                <pre>git add calculator.js</pre>
+
                 <p>Create a file `calculator.test.js` with the following content:</p>
 <pre>
 // calculator.test.js
@@ -96,6 +105,9 @@ test('calls calculator to equal "Hello World!"', () => {
     expect(calculator()).toBe('Hello World!');
 });
 </pre>
+                <p>Add the new file to git:</p>
+                <pre>git add calculator.test.js</pre>
+
                 <p>Run <pre>npm install</pre> to install all entries of package.json.</p>
                 <p>Run <pre>npm test</pre> and Jest will print a message alike this:</p>
 <pre>
