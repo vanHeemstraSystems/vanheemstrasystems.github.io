@@ -68,7 +68,9 @@
                 <pre>pip3 install pytest</pre>
 
                 <p>Create a file `calculator.py` with the following content:</p>
-<pre>class Calculator(object):
+<pre># calculator.py
+
+    class Calculator(object):
         def __init__(self, message = 'Hello World!'):
             self.message = message</pre>
 
@@ -76,7 +78,9 @@
                 <pre>git add calculator.py</pre>                
 
                 <p>Create a file `calculator.test.py` with the following content:</p>
-<pre>import unittest
+<pre># calculator.test.py
+    
+    import unittest
 
         from calculator import Calculator
         
