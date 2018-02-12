@@ -59,6 +59,68 @@
                 <p>From here on we will add and edit code for python in this python branch, in a newly created directory called python.</p>
                 <pre>mkdir python</pre>
                 <pre>cd python</pre>
+
+                <p>To see if Python is installed, type the below on your command line.</p>
+                <pre>py -v</pre>
+                <p>To see if PyTest is installed, type the below on your command line.</p>
+                <pre>pytest -v</pre>
+                <p>If not already installed, install pytest as follows</p>
+                <pre>pip3 install pytest</pre>
+
+                <p>Create a file `calculator.py` with the following content:</p>
+<pre>class Calculator(object):
+        def __init__(self, message = 'Hello World!'):
+            self.message = message</pre>
+
+                <p>Add the new file to git:</p>
+                <pre>git add calculator.py</pre>                
+
+                <p>Create a file `calculator.test.py` with the following content:</p>
+<pre>import unittest
+
+        from calculator import Calculator
+        
+        class CalculatorTestCase(unittest.TestCase):
+            def setUp(self):
+                self.calculator = Calculator()
+        
+            def test_message(self):
+                self.assertEqual(self.calculator.message, 'Hello World!', msg='Message Invalid.')</pre>
+
+                <p>Add the new file to git:</p>
+                <pre>git add calculator.test.py</pre>
+
+                <p>Create a file '.gitignore' with the following content:</p>
+<pre>
+__pycache__
+*.py[cod]
+.DS_Store
+</pre>
+                
+                <p>Add the new file to git:</p>
+                <pre>git add .gitignore</pre>
+
+                <p>Run <pre>pytest calculator.test.py</pre> and PyTest will print a message alike this:</p>
+<pre>
+        ============================= test session starts =============================
+        platform win32 -- Python 3.5.2, pytest-3.4.0, py-1.5.2, pluggy-0.6.0
+        rootdir: C:\Users\user\Source\Repos\willem-vanheemstrasystems\python-calculator-unit-testing, inifile:
+        collected 1 item
+        
+        calculator.test.py .                                                     [100%]
+        
+        ========================== 1 passed in 0.48 seconds ===========================
+</pre>
+
+                <p>Commit your changes:</p>
+                <pre>git commit -m "first unit test"</pre>
+                <p>And push your changes back to the 'python' branch</p>
+                <pre>git push --set-upstream origin python</pre>
+                <p>Check the status to verify that all has been committed:</p>
+                <pre>git status</pre>
+
+                <p><strong>You just successfully wrote your first test using PyTest!</strong></p>
+
                 <p>more to follow...</p>
 
             </section>
