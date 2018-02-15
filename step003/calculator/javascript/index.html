@@ -163,9 +163,36 @@ module.exports = calculator;
 </pre>      
         
                 <p><a href="https://hackernoon.com/function-type-signatures-in-javascript-5c698c1e9801">A Type Signature defines the inputs and outputs for the function, sometimes including the number of arguments, the types of arguments and order of arguments contained by a function.</a></p>
+
+                <p>Update the file `calculator.test.js` so it now provides an input:</p>
+<pre>
+// calculator.test.js
+
+test('calls calculator to equal "Hello World!"', () => {
+    const calculator = require('./calculator');
+    expect(calculator('Hello World!')).toBe('Hello World!');
+});
+</pre>
                 <p>Run <pre>npm test</pre> and Jest will print a message alike this:</p>
-                
-        
+<pre>
+PASS  .\calculator.test.js (10.266s)
+calls calculator to equal "Hello World!" (125ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        3.594s
+Ran all test suites.
+</pre>
+
+                <p>Commit your changes:</p>
+                <pre>git commit -m "first functional programming unit test"</pre>
+                <p>And push your changes back to the 'javascript' branch</p>
+                <pre>git push --set-upstream origin javascript</pre>
+                <p>Check the status to verify that all has been committed:</p>
+                <pre>git status</pre>
+
+                <p><strong>You just successfully wrote your first functional programming test using Jest!</strong></p>        
         
                 <h4>Step 3.4 - Coding in Python: calculator</h4>
                 <p><a href="../python/">Link</a></p>
