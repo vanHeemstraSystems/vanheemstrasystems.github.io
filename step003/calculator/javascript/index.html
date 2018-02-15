@@ -139,7 +139,29 @@ look at the <a href="https://facebook.github.io/jest/docs/en/cli.html">Jest CLI 
                 <h5>Functional Programming</h5>
                 <p>Even though our code passes the test, we are not following the best practise of Functional Programming.</p>
                 <p><a href="http://blog.jenkster.com/2015/12/what-is-functional-programming.html">Every function you write has two sets of inputs and two sets of outputs.</a></p>
+                <p>There are ***two sets of input***: the visible input and the hidden input.</p>
+                <p>In the example of Hello World, there is no visible input, yet the string 'Hello World!' is hidden input.</p>
+                <p>We say no visible input, because the function does not show input parameters (such as a string) from the outside.</p>
+                <p>Only by looking inside the function can we see that a value is created.</p>
+                <p>This is 'bad practise', we cannot treat the function as a ***black box*** as the input is 'invisble' from the outside.</p>
+                <p>Not being able to treat the function as a black box means not being able to test is properly without inside information.</p>
+                <p>There are ***two sets of output***: the visible output and the hidden output.</p>
+                <p>In the example of Hello World, there is no visible output, yet the string 'Hello World!' is hidden output.</p>  
+                <p>We say no visible output, because the function does not show a return type (such as a string) from the outside.</p>
+                <p>Only by looking inside the function can we see that a value is returned.</p>
+                <p>This is 'bad practise', we cannot treat the function as a ***black box*** as the outcome is 'invisble' from the outside.</p>
+                <p>Not being able to treat the function as a black box means not being able to test is properly without inside information.</p>
+                <p>So, let's rewrite our function so that it has visible input, no hidden input. As well as visible output, no hidden output.<p>
         
+<pre>
+// calculator.js
+
+function calculator(message) {
+    return message;
+}
+
+module.exports = calculator;
+</pre>        
         
                 <h4>Step 3.4 - Coding in Python: calculator</h4>
                 <p><a href="../python/">Link</a></p>
