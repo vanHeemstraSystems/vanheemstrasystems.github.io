@@ -151,7 +151,7 @@ look at the <a href="https://facebook.github.io/jest/docs/en/cli.html">Jest CLI 
                 <p>Only by looking inside the function can we see that a value is returned.</p>
                 <p>This is 'bad practise', we cannot treat the function as a <strong>black box</strong> as the outcome is 'invisble' from the outside.</p>
                 <p>Not being able to treat the function as a black box means not being able to test is properly without inside information.</p>
-                <p>So, let's rewrite our function so that it has visible input, no hidden input. As well as visible output, no hidden output.<p>
+                <p>So, let's rewrite and save our function so that it has visible input, no hidden input. As well as visible output, no hidden output.<p>
         
 <pre>
 // calculator.js
@@ -163,6 +163,9 @@ module.exports = calculator;
 </pre>      
         
                 <p><a href="https://hackernoon.com/function-type-signatures-in-javascript-5c698c1e9801">A Type Signature defines the inputs and outputs for the function, sometimes including the number of arguments, the types of arguments and order of arguments contained by a function.</a></p>
+                <p>Run <pre>npm test</pre> and Jest will print a message alike this:</p>
+                
+        
         
                 <h4>Step 3.4 - Coding in Python: calculator</h4>
                 <p><a href="../python/">Link</a></p>
