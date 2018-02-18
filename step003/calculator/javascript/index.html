@@ -153,7 +153,51 @@ look at the <a href="https://facebook.github.io/jest/docs/en/cli.html">Jest CLI 
                 <p>Next, install the Pulp command line tool, and the Bower package manager.</p>
                 <pre>npm install -g pulp bower</pre>
                 <p>This will place the pulp and bower command line tools on your path. At this point, you will have all the tools needed to create our first PureScript code.</p>
+                <p>Start from inside the directory 'calculator'</p>
+                <p>Make sure you have the most up-to-date version from the repository by running the following command:</p>
+                <pre>git branch javascript</pre>
+                <p>Next, change our current branch to the 'javascript' branch.</p>
+                <pre>git checkout javascript</pre>
+                <p>Move inside the subdirectory 'javascript'.</p>
+                <p>Initiate the directory for PureScript using Pulp like so:</p>
+                <pre>pulp init --force</pre>
+                <p>It will have created the following files and directories:</p>
+                <pre>
+                    bower_components/
+                    src/ 
+                    test/
+                    .gitignore (replacing our original one)
+                    .purs-repl
+                    bower.json
+                </pre>
+                <p>The ```src``` directory will contain our source files, and the ```test``` directory will contain our tests.</p>
+                <p>When programming in Visual Studio Code, now would be a good time to install the extension 'PureScript Language Support' published by Nicholas Wolverson, a Syntax Highlighting for PureScript programming language.</p>
+                <p>Change the code of src/Main.purs to:</p>
+<pre>
+module Main where
 
+import Prelude
+import Control.Monad.Eff (Eff)
+import Control.Monad.Eff.Console (CONSOLE, log)
+
+main :: forall e. Eff (console :: CONSOLE | e) Unit
+main = do
+  log "Hello World!"
+</pre>
+                <p>Build and run the above code as follows:</p>
+                <pre>pulp run</pre>
+                <p>If all went well, files will have been compiled and put in the directory 'output'.</p>
+                <p>Also the application will have run and logged the following to the console:</p>
+                <pre>Hello World!</pre>
+                <p>Let's stage, commit and push this back to our javascript branch:</p>
+                <pre>git add .</pre>
+                <pre>git commit -m 'first PureScript'</pre>
+                <pre>git push --set-upstream origin javascript</pre>
+                <p>Check the status to verify that all has been committed:</p>
+                <pre>git status</pre>
+
+                <p><strong>You just successfully wrote your first PureScript!</strong></p>
+                
                 
                 
                 <h4>Step 3.4 - Coding in Python: calculator</h4>
