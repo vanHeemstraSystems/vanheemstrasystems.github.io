@@ -145,6 +145,7 @@ look at the <a href="https://facebook.github.io/jest/docs/en/cli.html">Jest CLI 
                     <li>It uses a rich type system to support powerful abstractions.</li>
                     <li>It also generates fast, understandable code, which is important when interoperating with JavaScript, or other languages which compile to JavaScript. </li>
                 </ul>
+                <p>PureScript is a functional, strongly typed, programming language that compiles down to JavaScript and/or Node. </p>
                 <p>We will re-factor the previous code to be using PureScript.</p>
                 <p>Install PureScript as follows:</p>
                 <pre>npm install -g purescript</pre>
@@ -153,6 +154,7 @@ look at the <a href="https://facebook.github.io/jest/docs/en/cli.html">Jest CLI 
                 <p>Next, install the Pulp command line tool, and the Bower package manager.</p>
                 <pre>npm install -g pulp bower</pre>
                 <p>This will place the pulp and bower command line tools on your path. At this point, you will have all the tools needed to create our first PureScript code.</p>
+                <p>Read about Pulp at <a href="https://github.com/purescript-contrib/pulp">https://github.com/purescript-contrib/pulp</a></p>
                 <p>Start from inside the directory 'calculator'</p>
                 <p>Make sure you have the most up-to-date version from the repository by running the following command:</p>
                 <pre>git branch javascript</pre>
@@ -212,6 +214,51 @@ main = do
                 <pre>git status</pre>
 
                 <p><strong>You just successfully wrote your first PureScript CommonJS module!</strong></p>
+
+                <p>Let's create a function 'message' inside our PureCode code that handles our 'Hello World!' message specifically.</p>
+                <p>Change src/Main.purs to the following:</p>
+<pre>module Main where
+
+import Prelude
+import Control.Monad.Eff (Eff)
+import Control.Monad.Eff.Console (CONSOLE, log)
+
+message :: forall t1. t1 -> t1
+message s = s
+
+main :: forall e. Eff (console :: CONSOLE | e) Unit
+main = do
+    log (message "Hello World!")</pre>
+
+                <p>Now if we run the above code, we will see the same outcome, but the input has been passed to the 'message' function:</p>
+                <pre>pulp run</pre>
+
+                <p>To add modules to our project, we can do so as follows (for the Node.Process module):</p>
+                <pre>bower install purescript-node-process --save</pre>
+                <p>The --save option causes the dependency to be added to the bower.json configuration file.</p>
+                <p>The purescript-node-process library sources should now be available in the bower_components subdirectory, and will be included when you compile your project.</p>
+                <p>Following Pure principles make the input visible, by requiring it as an input variable, like so:</p>
+<pre>
+    module Main where
+
+    import Prelude
+    import Control.Monad.Eff (Eff)
+    import Control.Monad.Eff.Console (CONSOLE, log)
+    import Node.Process (PROCESS, argv)
+
+    message :: forall t1. t1 -> t1
+    message s = s
+    
+    main :: forall e. Eff (console :: CONSOLE, process :: PROCESS | e) Unit
+    main = do
+        args <- argv
+        log (message args)</pre>
+
+                <p>NOTE: In above code we have also added 'process :: PROCESS' </p>
+                <p>Now first build the code:</p>
+                <pre>pulp build</pre>
+                <p>Then run it, passing the input parameter 'Hello World!' as an argument:</p>
+                <pre>pulp run -- 'Hello World!'</pre>
 
                 <h4>Step 3.4 - Coding in Python: calculator</h4>
                 <p><a href="../python/">Link</a></p>
