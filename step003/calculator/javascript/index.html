@@ -198,8 +198,21 @@ main = do
 
                 <p><strong>You just successfully wrote your first PureScript!</strong></p>
                 
-                
-                
+                <h5>PureScript Modules</h5>
+                <p>Another best practise is Component-Based Development (CBD).</p>
+                <p>To turn our PureScript code into modules (here: of type CommonJS, as used by NPM), all we need to do is execute the following command:</p>
+                <pre>pulp build</pre>
+                <p>The generated modules will be placed in the output directory by default. Each PureScript module will be compiled to its own CommonJS module, in its own subdirectory.</p>
+
+                <p>Let's stage, commit and push this back to our javascript branch:</p>
+                <pre>git add .</pre>
+                <pre>git commit -m 'first PureScript CommonJS module'</pre>
+                <pre>git push --set-upstream origin javascript</pre>
+                <p>Check the status to verify that all has been committed:</p>
+                <pre>git status</pre>
+
+                <p><strong>You just successfully wrote your first PureScript CommonJS module!</strong></p>
+
                 <h4>Step 3.4 - Coding in Python: calculator</h4>
                 <p><a href="../python/">Link</a></p>
 
