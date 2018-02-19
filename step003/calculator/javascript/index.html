@@ -164,7 +164,7 @@ look at the <a href="https://facebook.github.io/jest/docs/en/cli.html">Jest CLI 
                 <p>Initiate the directory for PureScript using Pulp like so:</p>
                 <pre>pulp init --force</pre>
                 <p>It will have created the following files and directories:</p>
-                <pre>bower_components/
+<pre>bower_components/
 src/ 
 test/
 .gitignore (replacing our original one)
@@ -173,8 +173,7 @@ bower.json</pre>
                 <p>The <strong>src</strong> directory will contain our source files, and the <strong>test</strong> directory will contain our tests.</p>
                 <p>When programming in Visual Studio Code, now would be a good time to install the extension 'PureScript Language Support' published by Nicholas Wolverson, a Syntax Highlighting for PureScript programming language.</p>
                 <p>Change the code of src/Main.purs to:</p>
-<pre>
-module Main where
+<pre>module Main where
 
 import Prelude
 import Control.Monad.Eff (Eff)
@@ -236,21 +235,20 @@ main = do
                 <p>The --save option causes the dependency to be added to the bower.json configuration file.</p>
                 <p>The purescript-node-process library sources should now be available in the bower_components subdirectory, and will be included when you compile your project.</p>
                 <p>Following Pure principles make the input visible, by requiring it as an input variable, like so:</p>
-<pre>
-    module Main where
+<pre>module Main where
 
-    import Prelude
-    import Control.Monad.Eff (Eff)
-    import Control.Monad.Eff.Console (CONSOLE, log)
-    import Node.Process (PROCESS, argv)
+import Prelude
+import Control.Monad.Eff (Eff)
+import Control.Monad.Eff.Console (CONSOLE, log)
+import Node.Process (PROCESS, argv)
 
-    message :: forall t1. t1 -> t1
-    message s = s
-    
-    main :: forall e. Eff (console :: CONSOLE, process :: PROCESS | e) Unit
-    main = do
-        args <- argv
-        log (message args)</pre>
+message :: forall t1. t1 -> t1
+message s = s
+
+main :: forall e. Eff (console :: CONSOLE, process :: PROCESS | e) Unit
+main = do
+    args <- argv
+    log (message args)</pre>
 
                 <p>NOTE: In above code we have also added 'process :: PROCESS' </p>
                 <p>Now first build the code:</p>
