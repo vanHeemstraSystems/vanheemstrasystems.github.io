@@ -268,6 +268,61 @@ main = do
 
                 <h5>Unit Testing using PureScript Spec</h5>
                 <p>For (unit) testing we can make use of the Test Framework for PureCode, called <a href="http://purescript-spec.wickstrom.tech/">PureCode Spec</a></p>
+                <p>Install purescript-spec as a development dependency</p>
+                <pre>bower install --save-dev purescript-spec</pre>
+                <p>Now update the content of 'test/Main.purs' to:</p>
+<pre>module Test.Main where
+
+import Prelude
+import Control.Monad.Aff (delay)
+import Control.Monad.Eff (Eff)
+import Data.Time.Duration (Milliseconds(..))
+import Test.Spec (pending, describe, it)
+import Test.Spec.Assertions (shouldEqual)
+import Test.Spec.Reporter.Console (consoleReporter)
+import Test.Spec.Runner (RunnerEffects, run)
+
+main :: Eff (RunnerEffects ()) Unit
+main = run [consoleReporter] do
+    describe "purescript-spec" do
+    describe "Attributes" do
+        it "awesome" do
+        let isAwesome = true
+        isAwesome `shouldEqual` true
+        pending "feature complete"
+    describe "Features" do
+        it "runs in NodeJS" $ pure unit
+        it "runs in the browser" $ pure unit
+        it "supports streaming reporters" $ pure unit
+        it "supports async specs" do
+        res <- delay (Milliseconds 100.0) *> pure "Alligator"
+        res `shouldEqual` "Alligator"
+        it "is PureScript 0.10.x compatible" $ pure unit
+</pre>
+                <p>To run the test just execute the following command:</p>
+                <pre>pulp test</pre>
+                <p>The result from the test is this:</p>
+<pre>* Building project in C:\Users\user\Source\Repos\vanHeemstraSystems\calculator\javascript
+Compiling Test.Main
+* Build successful.
+* Running tests...
+purescript-spec » Attributes
+    ✓︎ awesome
+    ~ feature complete
+
+purescript-spec » Features
+    ✓︎ runs in NodeJS
+    ✓︎ runs in the browser
+    ✓︎ supports streaming reporters
+    ✓︎ supports async specs
+    ✓︎ is PureScript 0.10.x compatible
+
+Summary
+6/6 tests passed
+1 test pending
+
+* Tests OK.
+</pre>
                 <p>To be continued ...</p>
 
                 <h4>Step 3.4 - Coding in Python: calculator</h4>
